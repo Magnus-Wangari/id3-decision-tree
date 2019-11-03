@@ -1,4 +1,4 @@
-#@uthor Edmond Menya
+
 #ID3 Algorithm Illustration for Decision Trees
 import math
 import pandas as pd
@@ -165,28 +165,7 @@ print("New data set for next iteration is: \n",data)
 
 
 
-#fifth iteration
-
-#fourth iteration
-
-data_headers=['turbo','fast']
-#data=pd.read_csv("export8_csv.csv",names=data_headers,header=None)
-#print(entropy(list(data['fast'])))
-
-target_entopy,attr_row_del_dict = entropy()
-print("Entropy of fast is: ",target_entopy)
-selected_root_node,delete_rows = root_node_election(target_entopy)
-print("Smaller entopies of root node are: ",delete_rows)
-delete_row=[]
-for row,value in delete_rows[selected_root_node].items():
-    if value==0:#arrest values with extreem entopies
-        delete_row.append(row)#store them in a list
-   
-print("The selected root node is: ",(selected_root_node))   
-print("The rows to be deleted are: ",delete_row)
-data = reduce_training_dataset(data,delete_row,selected_root_node)
-print("New data set for next iteration is: \n",data)
-
+#there should be a final iteration not figured it out.
 
 
 
